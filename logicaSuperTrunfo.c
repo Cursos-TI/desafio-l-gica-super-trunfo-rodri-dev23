@@ -1,14 +1,13 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <time.h>
 
 int main(){
 
                  // Novas atualizações para a lógica do super trunfo nivel aventureiro.
-      // fazer a comparação de um atributo usando "If e else" ;   
-      // modificar o "SuperPoder e fazer a comparação correta usando IF e ELSE"  
-      // Exibir a comparação do atributo da carta e informar o vencedor  
+      //   
 
-   printf("\nDESAFIO LOGICA SUPER TRUNFO");
+
 
 
 
@@ -23,7 +22,9 @@ int main(){
     long double vencedor1 = populacao1 + area1 + pib1 + turistico1;
 
      
-           printf("\nDESAFIO SUPER TRUNFO \n");
+           printf("\nJOGO SUPER TRUNFO \n");
+
+           printf("\nCADASTRE SUA CARTA\n");
 
 
      printf("\nJogador: 1\n");
@@ -58,7 +59,7 @@ int main(){
     char Cidade [30];
     unsigned long int Populacao2;
     double Area2, Pib;
-    int Turistico2;
+    int Turistico2, escolha1, resultado;
     double DCP2, PibPC2;
     long double SuperPoder2;
     long double vencedor2 = Populacao2 + Area2 + Pib + Turistico2;
@@ -90,8 +91,107 @@ int main(){
     scanf("%d", &Turistico2);
 
 
+    
+///////////////////////////////////////////////////////////////////////////////////
 
-    printf("\n\nCarta do jogador 1: \n\n");
+
+    
+
+
+// Objetivo: Criar um menu interativo usando switch
+// E fazer as comparaçôes usando decisão aninhadas EX: IF Else dentro de IF Else
+        
+         
+         printf("\nEscolha uma opção de atributos para batalhar.\n");
+         printf("1. População. \n");
+         printf("2. Aréa. \n");
+         printf("3. Pib. \n");
+         printf("4. Pontos Turisticos. \n");
+         printf("5. Dp. \n");
+         scanf("%d", &escolha1);
+
+         printf("Resultado da batalha de tributos. \n");
+
+switch (escolha1)
+{
+case 1:
+printf("\nPopulação \n");
+     if (populacao1 > Populacao2)
+     {
+       printf("\nCarta 1 venceu a batalha de atributos 'População'. \n");
+     }else if (populacao1 < Populacao2)
+     {
+        printf("\nCarta 2 venceu a batalha de atributos 'População'. \n");
+     }else {
+        printf("\nEmpate \n");
+     }
+     
+     
+break;
+    case 2:
+printf("\nAréa \n");
+     if (area1 > Area2)
+{
+  printf("\nCarta 1 venceu a batalha de atributos 'Aréa'. \n");
+}else if (area1 < Area2)
+     {
+        printf("\nCarta 2 venceu a batalha de atributos 'Aréa'. \n");
+     }else {
+        printf("\nEmpate \n");
+     }
+
+break;
+case 3:
+printf("\nPib \n");
+      if (pib1 > Pib)
+      {
+        printf("\nCarta 1 venceu a batalha de atributos 'PIB'. \n");
+      }else if (pib1 < Pib)
+     {
+        printf("\nCarta 2 venceu a batalha de atributos 'PIB'. \n");
+     }else {
+        printf("\nEmpate \n");
+     }
+      
+break;
+case 4:
+printf("\nPontos turisticos \n");
+     if (turistico1 > Turistico2)
+     {
+      printf("\nCarta 1 venceu a batalha de atributos 'Pontos Turisticos'. \n");
+     }else if (turistico1 < Turistico2)
+     {
+        printf("\nCarta 2 venceu a batalha de atributos 'Pontos Turisticos'. \n");
+     }else {
+        printf("\nEmpate \n");
+     }
+     
+break;
+case 5:
+printf("\nDp \n");
+      if (dp1 < DCP2)
+      {
+        printf("\nCarta 1 venceu a batalha de atributos 'Dencidade Populacional'. \n");
+      }else if (dp1 > DCP2)
+     {
+        printf("\nCarta 2 venceu a batalha de atributos 'Dencidade Populacional'. \n");
+     }else {
+        printf("\nEmpate \n");
+     }
+      
+break;
+default:
+break;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // *** Resultados da carta 1 ***
+
+  printf("***Digite '1' para ver o resultado final das carta***  \n");
+  scanf("%d", &resultado);
+
+ printf("\n\nCarta do jogador 1: \n\n");
     printf("Estado: ");
     printf(" %s\n", estado);
     printf("Codigo: ");
@@ -122,9 +222,8 @@ int main(){
     superPoder1 = (double) populacao1 + area1 + pib1 + turistico1 + dp1;
     printf("Super Poder: =\t%d\n", superPoder1 > SuperPoder2);
 
-    
-///////////////////////////////////////////////////////////////////////////////////
 
+    // *** Resultados da carta 2 ***
 
     printf("\n\nCarta do jogador: 2 \n\n");
     printf("Estado: ");
@@ -156,54 +255,4 @@ int main(){
 
     SuperPoder2 = (double) Populacao2 + Area2 + Pib + Turistico2 + DCP2;
     printf("Super Poder: =\t%d\n", SuperPoder2 > superPoder1);
-
-
-    //////////////////////////////////////////////////////////////////////////
-
-    //Comparações
-
-    printf("\nComparações dos atributos das cartas: \n");
-
-       if (populacao1 > Populacao2)
-    {
-      printf("\nO atributo escolhido para a comparação foi o (a): População \n");
-      printf("Resultado: Carta 1 venceu\n");
-
-    }else{
-      printf("\nO atributo escolhido para a comparação foi o (a): População: \n");
-      printf("Resultado: Carta 2 venceu\n");
-    }
-       if (area1 > Area2)
-       {
-        printf("\nO atributo escolhido para a comparação foi o (a): Area: \n");
-        printf("Resultado: Carta 1 venceu\n");
-       }else{
-      printf("\nO atributo escolhido para a comparação foi o (a): Area: \n");
-      printf("Resultado: Carta 2 venceu\n");
-    }  
-       if (pib1 > Pib)
-       {
-        printf("\nO atributo escolhido para a comparação foi o (a): Pib: \n");
-        printf("Resultado: Carta 1 venceu\n");
-       }else{
-      printf("\nO atributo escolhido para a comparação foi o (a): Pib: \n");
-      printf("Resultado: Carta 2 venceu\n");
-    }
-       if (turistico1 > Turistico2)
-       {
-        printf("\nO atributo escolhido para a comparação foi o (a): Pontos turisticos: \n");
-        printf("Resultado: Carta 1 venceu\n");
-      }else{
-      printf("\nO atributo escolhido para a comparação foi o (a): Pontos turisticos: \n");
-      printf("Resultado: Carta 2 venceu\n");
-    }
-
-
-
-
-
-
-   return 0;
-    
-
- }
+}
